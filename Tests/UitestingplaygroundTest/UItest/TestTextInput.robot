@@ -1,15 +1,18 @@
 *** Settings ***
-Documentation  Check text changed
+Documentation  I want to check the text change on the button
 Library  SeleniumLibrary
-Resource    ../../../Bindings/Bindings.robot
+Resource  ../../../Bindings/BindingsUItest/BindingsTestTextInput.robot
+Suite Setup  Open Browser
+Suite Teardown  Close Browser
+
 
 *** Test Cases ***
 Check that button text is changed after click
 [Tags] UI
-    Given Browser Chrome is open
-    And Button text is "Button That Should Change it's Name Based on Input Value"
-    When Input text "Test" to the text field
-    And Click to button "Button That Should Change it's Name Based on Input Value"
+    Given site http://uitestingplayground.com/textinput is open
+    And The button text should be "Button That Should Change it's Name Based on Input Value"
+    When I input text "Test" to the text field
+    And I click to button "Button That Should Change it's Name Based on Input Value"
     Then button text should be "Test"
 
 

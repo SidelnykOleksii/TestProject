@@ -1,24 +1,26 @@
 *** Settings ***
-Documentation  Test UItestplayground tasks
+Documentation  We check the text change on the button
 Library  SeleniumLibrary
 
 *** Variables ***
 ${browser}  chrome
-${urltextinput}  http://uitestingplayground.com/textinput
+${url}  http://uitestingplayground.com/textinput
 ${textinput}  Test
-
+${buttonlocatorbeforetext}  //button[text('Button That Should Change it's Name Based on Input Value')]
+${textfileld}  //input[id@='newButtonName']
+${textaftertest}  //button[text('Test')]
 
 *** Keywords ***
-Browser Chrome is open
-    Open Browser  ${urltextinput}  ${browser}
-Button text is "Button That Should Change it's Name Based on Input Value"
-    Get Text  //button[text('Button That Should Change it's Name Based on Input Value')]
-Input text "Test" to the text field
-    Input Text  //input[id@='newButtonName']  ${textinput}
-Click to button "Button That Should Change it's Name Based on Input Value"
-    Click Button  //button[text('Button That Should Change it's Name Based on Input Value')]
+site http://uitestingplayground.com/textinput is open
+    Open Browser  ${url}  ${browser}
+The button text should be "Button That Should Change it's Name Based on Input Value"
+    Get Text  ${buttonlocatorbeforetext}
+I input text "Test" to the text field
+    Input Text  ${textfileld}  ${textinput}
+I click to button "Button That Should Change it's Name Based on Input Value"
+    Click Button  ${buttonlocatorbeforetext}
 button text should be "Test"
-    Get Text  //button[text('Test')]
+    Get Text  ${textaftertest}
 
 
 
