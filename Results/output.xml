@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210907 17:12:42.031" rpa="false" schemaversion="2">
+<suite id="s1" name="TestTextInput" source="C:\Users\osidelnyk\PycharmProjects\TestProject\Tests\UitestingplaygroundTest\UItest\TestTextInput.robot">
+<kw name="Setup chromedriver" type="SETUP">
+<kw name="Set Environment Variable" library="OperatingSystem">
+<arg>webdriver.chrome.driver</arg>
+<arg>${EXECDIR}/chromedriver.exe</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<msg timestamp="20210907 17:12:42.249" level="INFO">Environment variable 'webdriver.chrome.driver' set to value 'C:\Users\osidelnyk\PycharmProjects\TestProject/chromedriver.exe'.</msg>
+<status status="PASS" starttime="20210907 17:12:42.249" endtime="20210907 17:12:42.249"/>
+</kw>
+<status status="PASS" starttime="20210907 17:12:42.249" endtime="20210907 17:12:42.249"/>
+</kw>
+<test id="s1-t1" name="Given Site http://uitestingplayground.com/textinput is open">
+<kw name="Open browser TestTextInput Chrome" library="Bindings">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210907 17:12:42.249" level="INFO">Opening browser 'chrome' to base url 'http://uitestingplayground.com/textinput'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210907 17:12:42.265" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210907 17:12:42.265" endtime="20210907 17:12:42.265"/>
+</kw>
+<msg timestamp="20210907 17:12:42.265" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</msg>
+<status status="FAIL" starttime="20210907 17:12:42.249" endtime="20210907 17:12:42.265"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.249" endtime="20210907 17:12:42.265"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.249" endtime="20210907 17:12:42.265">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</status>
+</test>
+<test id="s1-t2" name="Given button text is &quot;Button That Should Change it's Name Based on Input Value&quot;">
+<kw name="Check button text before test" library="Bindings">
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>//button[text('Button That Should Change it's Name Based on Input Value')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210907 17:12:42.265" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210907 17:12:42.265" endtime="20210907 17:12:42.265"/>
+</kw>
+<msg timestamp="20210907 17:12:42.265" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20210907 17:12:42.265" endtime="20210907 17:12:42.265"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.265" endtime="20210907 17:12:42.265"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.265" endtime="20210907 17:12:42.265">No browser is open.</status>
+</test>
+<test id="s1-t3" name="When I input text &quot;Test&quot; in text field">
+<kw name="Input text TestTextInput" library="Bindings">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[id@='newButtonName']</arg>
+<arg>${textinput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210907 17:12:42.281" level="INFO">Typing text 'Test' into text field '//input[id@='newButtonName']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210907 17:12:42.281" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<msg timestamp="20210907 17:12:42.281" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.265" endtime="20210907 17:12:42.281">No browser is open.</status>
+</test>
+<test id="s1-t4" name="And Click on button &quot;Button That Should Change it's Name Based on Input Value&quot;">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[text('Button That Should Change it's Name Based on Input Value')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210907 17:12:42.281" level="INFO">Clicking button '//button[text('Button That Should Change it's Name Based on Input Value')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210907 17:12:42.281" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<msg timestamp="20210907 17:12:42.281" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281">No browser is open.</status>
+</test>
+<test id="s1-t5" name="Then button text should be &quot;Test&quot;">
+<kw name="Get text result" library="Bindings">
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>//button[text('Test')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210907 17:12:42.281" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<msg timestamp="20210907 17:12:42.281" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281"/>
+</kw>
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281">No browser is open.</status>
+</test>
+<test id="s1-t6" name="[Teardown] Close browser">
+<status status="FAIL" starttime="20210907 17:12:42.281" endtime="20210907 17:12:42.281">Test case contains no keywords.</status>
+</test>
+<doc>Check that text on button changed after click</doc>
+<status status="FAIL" starttime="20210907 17:12:42.031" endtime="20210907 17:12:42.281"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="6" skip="0" id="s1" name="TestTextInput">TestTextInput</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
