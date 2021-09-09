@@ -1,46 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210908 15:05:10.171" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210909 09:55:34.191" rpa="false" schemaversion="2">
 <suite id="s1" name="TestClientDelay" source="C:\Users\osidelnyk\PycharmProjects\TestProject\Tests\UitestingplaygroundTest\UItest\TestClientDelay.robot">
-<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210908 15:05:10.486" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
-<msg timestamp="20210908 15:05:10.492" level="INFO">Firefox driver log is always forced to to: C:\Users\osidelnyk\PycharmProjects\TestProject\results\geckodriver-1.log</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210908 15:05:10.505" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20210908 15:05:10.505" endtime="20210908 15:05:10.505"/>
-</kw>
-<msg timestamp="20210908 15:05:10.544" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
-</msg>
-<status status="FAIL" starttime="20210908 15:05:10.486" endtime="20210908 15:05:10.544"/>
-</kw>
 <test id="s1-t1" name="Check text displayed after click button">
-<status status="FAIL" starttime="20210908 15:05:10.544" endtime="20210908 15:05:10.545">Parent suite setup failed:
-WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
-</status>
-</test>
-<test id="s1-t2" name="[Tags] UI">
-<status status="FAIL" starttime="20210908 15:05:10.546" endtime="20210908 15:05:10.547">Parent suite setup failed:
-WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
-</status>
+<kw name="Given Site http://uitestingplayground.com/clientdelay is open" library="BindingsTestClientDelay">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210909 09:55:34.407" level="INFO">Opening browser 'chrome' to base url 'http://uitestingplayground.com/clientdelay'.</msg>
+<status status="PASS" starttime="20210909 09:55:34.407" endtime="20210909 09:55:36.380"/>
+</kw>
+<status status="PASS" starttime="20210909 09:55:34.407" endtime="20210909 09:55:36.380"/>
+</kw>
+<kw name="When I click on &quot;Button Triggering Client Side Logic&quot; button" library="BindingsTestClientDelay">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210909 09:55:36.381" level="INFO">Clicking button '//button[@id='ajaxButton']'.</msg>
+<status status="PASS" starttime="20210909 09:55:36.381" endtime="20210909 09:55:36.443"/>
+</kw>
+<status status="PASS" starttime="20210909 09:55:36.381" endtime="20210909 09:55:36.443"/>
+</kw>
+<kw name="Then I wait 15 seconds until the text &quot;Data calculated on the client side.&quot; appears under the button" library="BindingsTestClientDelay">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${timeout}</arg>
+<arg>${appearstext}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20210909 09:55:36.446" level="FAIL">ValueError: Argument 'timeout' got value 'Data calculated on the client side.' that cannot be converted to timedelta or None.</msg>
+<status status="FAIL" starttime="20210909 09:55:36.445" endtime="20210909 09:55:36.446"/>
+</kw>
+<status status="FAIL" starttime="20210909 09:55:36.444" endtime="20210909 09:55:36.447"/>
+</kw>
+<tag>UI</tag>
+<status status="FAIL" starttime="20210909 09:55:34.407" endtime="20210909 09:55:36.448">ValueError: Argument 'timeout' got value 'Data calculated on the client side.' that cannot be converted to timedelta or None.</status>
 </test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210908 15:05:10.548" endtime="20210908 15:05:10.549"/>
+<status status="PASS" starttime="20210909 09:55:36.450" endtime="20210909 09:55:38.544"/>
 </kw>
 <doc>Check text displayed</doc>
-<status status="FAIL" starttime="20210908 15:05:10.173" endtime="20210908 15:05:10.549">Suite setup failed:
-WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
-</status>
+<status status="FAIL" starttime="20210909 09:55:34.191" endtime="20210909 09:55:38.544"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">UI</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="TestClientDelay">TestClientDelay</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TestClientDelay">TestClientDelay</stat>
 </suite>
 </statistics>
 <errors>
