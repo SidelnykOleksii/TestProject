@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210909 10:47:00.098" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210913 10:47:09.106" rpa="false" schemaversion="2">
 <suite id="s1" name="TestClientDelay" source="C:\Users\osidelnyk\PycharmProjects\TestProject\Tests\UitestingplaygroundTest\UItest\TestClientDelay.robot">
 <test id="s1-t1" name="Check that text displayed after 15 second">
-<kw name="Given Site http://uitestingplayground.com/clientdelay is open" library="BindingsTestClientDelay">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210913 10:47:09.353" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20210913 10:47:09.369" level="INFO">Firefox driver log is always forced to to: C:\Users\osidelnyk\PycharmProjects\TestProject\results\geckodriver-122.log</msg>
+<status status="PASS" starttime="20210913 10:47:09.353" endtime="20210913 10:47:15.731"/>
+</kw>
+<kw name="Given Site http://uitestingplayground.com/clientdelay is open" library="ResoursesTestClientDelay" sourcename="Site ${url} is open">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
-<arg>${browser}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210909 10:47:00.314" level="INFO">Opening browser 'chrome' to base url 'http://uitestingplayground.com/clientdelay'.</msg>
-<status status="PASS" starttime="20210909 10:47:00.314" endtime="20210909 10:47:02.215"/>
+<msg timestamp="20210913 10:47:15.731" level="INFO">Opening browser 'chrome' to base url 'http://uitestingplayground.com/clientdelay'.</msg>
+<status status="PASS" starttime="20210913 10:47:15.731" endtime="20210913 10:47:17.950"/>
 </kw>
-<status status="PASS" starttime="20210909 10:47:00.314" endtime="20210909 10:47:02.215"/>
+<status status="PASS" starttime="20210913 10:47:15.731" endtime="20210913 10:47:17.950"/>
 </kw>
-<kw name="When I click on &quot;Button Triggering Client Side Logic&quot; button" library="BindingsTestClientDelay">
+<kw name="When I click on &quot;Button Triggering Client Side Logic&quot; button" library="ResoursesTestClientDelay" sourcename="I click on ${text} button">
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>${button}</arg>
+<arg>${BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210909 10:47:02.216" level="INFO">Clicking button '//button[@id='ajaxButton']'.</msg>
-<status status="PASS" starttime="20210909 10:47:02.216" endtime="20210909 10:47:02.278"/>
+<msg timestamp="20210913 10:47:17.951" level="INFO">Clicking button '//button[@id='ajaxButton']'.</msg>
+<status status="PASS" starttime="20210913 10:47:17.951" endtime="20210913 10:47:18.023"/>
 </kw>
-<status status="PASS" starttime="20210909 10:47:02.215" endtime="20210909 10:47:02.278"/>
+<status status="PASS" starttime="20210913 10:47:17.951" endtime="20210913 10:47:18.023"/>
 </kw>
-<kw name="Then I wait 15 seconds until the text &quot;Data calculated on the client side.&quot; appears under the button" library="BindingsTestClientDelay">
+<kw name="Then I wait 15 seconds until the text Data calculated on the client side. appears under the button" library="ResoursesTestClientDelay" sourcename="Then I wait ${numeric} seconds until the text ${text} appears under the button">
 <kw name="Sleep" library="BuiltIn">
-<arg>${sleep}</arg>
+<arg>${SLEEP}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210909 10:47:17.283" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20210909 10:47:02.279" endtime="20210909 10:47:17.283"/>
+<msg timestamp="20210913 10:47:33.040" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20210913 10:47:18.025" endtime="20210913 10:47:33.041"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>${appearstextlocator}</arg>
-<arg>${appearstext}</arg>
+<arg>${APPEARSTEXT}</arg>
+<arg>${text}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20210909 10:47:17.285" level="INFO">Verifying element '//p[text()='Data calculated on the client side.']' contains exact text 'ata calculated on the client side.'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210909 10:47:17.505" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210909 10:47:17.335" endtime="20210909 10:47:17.505"/>
+<msg timestamp="20210913 10:47:33.043" level="INFO">Verifying element '//p[text()='Data calculated on the client side.']' contains exact text 'Data calculated on the client side.'.</msg>
+<status status="PASS" starttime="20210913 10:47:33.042" endtime="20210913 10:47:33.086"/>
 </kw>
-<msg timestamp="20210909 10:47:17.505" level="FAIL">The text of element '//p[text()='Data calculated on the client side.']' should have been 'ata calculated on the client side.' but it was 'Data calculated on the client side.'.</msg>
-<status status="FAIL" starttime="20210909 10:47:17.284" endtime="20210909 10:47:17.505"/>
+<status status="PASS" starttime="20210913 10:47:18.024" endtime="20210913 10:47:33.086"/>
 </kw>
-<status status="FAIL" starttime="20210909 10:47:02.279" endtime="20210909 10:47:17.505"/>
-</kw>
-<tag>UI</tag>
-<status status="FAIL" starttime="20210909 10:47:00.314" endtime="20210909 10:47:17.505">The text of element '//p[text()='Data calculated on the client side.']' should have been 'ata calculated on the client side.' but it was 'Data calculated on the client side.'.</status>
-</test>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210909 10:47:17.521" endtime="20210909 10:47:19.627"/>
+<status status="PASS" starttime="20210913 10:47:33.086" endtime="20210913 10:47:35.212"/>
 </kw>
+<tag>UI</tag>
+<status status="PASS" starttime="20210913 10:47:09.353" endtime="20210913 10:47:35.212"/>
+</test>
 <doc>I want check that text displayed after 15 second</doc>
-<status status="FAIL" starttime="20210909 10:47:00.098" endtime="20210909 10:47:19.627"/>
+<status status="PASS" starttime="20210913 10:47:09.106" endtime="20210913 10:47:35.212"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">UI</stat>
+<stat pass="1" fail="0" skip="0">UI</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="TestClientDelay">TestClientDelay</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestClientDelay">TestClientDelay</stat>
 </suite>
 </statistics>
 <errors>
