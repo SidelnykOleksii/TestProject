@@ -1,57 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210913 10:47:09.106" rpa="false" schemaversion="2">
-<suite id="s1" name="TestClientDelay" source="C:\Users\osidelnyk\PycharmProjects\TestProject\Tests\UitestingplaygroundTest\UItest\TestClientDelay.robot">
-<test id="s1-t1" name="Check that text displayed after 15 second">
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210916 14:29:37.048" rpa="false" schemaversion="2">
+<suite id="s1" name="TestVisibility" source="C:\Users\osidelnyk\PycharmProjects\TestProject\Tests\UitestingplaygroundTest\UItest\TestVisibility.robot">
+<test id="s1-t1" name="Sceanario: Check that all buttons on page are not displayed after click to button &quot;Hide&quot;, except button &quot;Hide&quot;">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210913 10:47:09.353" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
-<msg timestamp="20210913 10:47:09.369" level="INFO">Firefox driver log is always forced to to: C:\Users\osidelnyk\PycharmProjects\TestProject\results\geckodriver-122.log</msg>
-<status status="PASS" starttime="20210913 10:47:09.353" endtime="20210913 10:47:15.731"/>
+<msg timestamp="20210916 14:29:37.264" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<msg timestamp="20210916 14:29:37.270" level="INFO">Firefox driver log is always forced to to: C:\Users\osidelnyk\PycharmProjects\TestProject\results\geckodriver-152.log</msg>
+<status status="PASS" starttime="20210916 14:29:37.264" endtime="20210916 14:29:43.108"/>
 </kw>
-<kw name="Given Site http://uitestingplayground.com/clientdelay is open" library="ResoursesTestClientDelay" sourcename="Site ${url} is open">
+<kw name="Given site http://uitestingplayground.com/visibility is open" library="ResoursesTestVisibility" sourcename="site ${url} is open">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210913 10:47:15.731" level="INFO">Opening browser 'chrome' to base url 'http://uitestingplayground.com/clientdelay'.</msg>
-<status status="PASS" starttime="20210913 10:47:15.731" endtime="20210913 10:47:17.950"/>
+<msg timestamp="20210916 14:29:43.124" level="INFO">Opening browser 'chrome' to base url 'http://uitestingplayground.com/visibility'.</msg>
+<status status="PASS" starttime="20210916 14:29:43.124" endtime="20210916 14:29:45.795"/>
 </kw>
-<status status="PASS" starttime="20210913 10:47:15.731" endtime="20210913 10:47:17.950"/>
+<status status="PASS" starttime="20210916 14:29:43.108" endtime="20210916 14:29:45.796"/>
 </kw>
-<kw name="When I click on &quot;Button Triggering Client Side Logic&quot; button" library="ResoursesTestClientDelay" sourcename="I click on ${text} button">
+<kw name="And following button &quot;Removed&quot; is displayed" library="ResoursesTestVisibility" sourcename="following button ${text1} is displayed">
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>${BUTTONS}[0]</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20210916 14:29:45.840" level="INFO">Current page contains button '//button[@id='removedButton']'.</msg>
+<status status="PASS" starttime="20210916 14:29:45.798" endtime="20210916 14:29:45.840"/>
+</kw>
+<status status="PASS" starttime="20210916 14:29:45.797" endtime="20210916 14:29:45.840"/>
+</kw>
+<kw name="And I click to button &quot;Hide&quot;" library="ResoursesTestVisibility" sourcename="I click to button ${text}">
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>${BUTTON}</arg>
+<arg>${HIDEBUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210913 10:47:17.951" level="INFO">Clicking button '//button[@id='ajaxButton']'.</msg>
-<status status="PASS" starttime="20210913 10:47:17.951" endtime="20210913 10:47:18.023"/>
+<msg timestamp="20210916 14:29:45.840" level="INFO">Clicking button '//button[@id='hideButton']'.</msg>
+<status status="PASS" starttime="20210916 14:29:45.840" endtime="20210916 14:29:45.903"/>
 </kw>
-<status status="PASS" starttime="20210913 10:47:17.951" endtime="20210913 10:47:18.023"/>
+<status status="PASS" starttime="20210916 14:29:45.840" endtime="20210916 14:29:45.904"/>
 </kw>
-<kw name="Then I wait 15 seconds until the text Data calculated on the client side. appears under the button" library="ResoursesTestClientDelay" sourcename="Then I wait ${numeric} seconds until the text ${text} appears under the button">
-<kw name="Sleep" library="BuiltIn">
-<arg>${SLEEP}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210913 10:47:33.040" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20210913 10:47:18.025" endtime="20210913 10:47:33.041"/>
+<kw name="Then button &quot;Removed&quot; should not be visible on the page" library="ResoursesTestVisibility" sourcename="button ${text1} should not be visible on the page">
+<kw name="Page Should Not Contain Button" library="SeleniumLibrary">
+<arg>${BUTTONS}[0]</arg>
+<doc>Verifies button ``locator`` is not found from current page.</doc>
+<msg timestamp="20210916 14:29:45.912" level="INFO">Current page does not contain button '//button[@id='removedButton']'.</msg>
+<msg timestamp="20210916 14:29:45.917" level="INFO">Current page does not contain input '//button[@id='removedButton']'.</msg>
+<status status="PASS" starttime="20210916 14:29:45.905" endtime="20210916 14:29:45.917"/>
 </kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>${APPEARSTEXT}</arg>
-<arg>${text}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20210913 10:47:33.043" level="INFO">Verifying element '//p[text()='Data calculated on the client side.']' contains exact text 'Data calculated on the client side.'.</msg>
-<status status="PASS" starttime="20210913 10:47:33.042" endtime="20210913 10:47:33.086"/>
-</kw>
-<status status="PASS" starttime="20210913 10:47:18.024" endtime="20210913 10:47:33.086"/>
+<status status="PASS" starttime="20210916 14:29:45.904" endtime="20210916 14:29:45.918"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210913 10:47:33.086" endtime="20210913 10:47:35.212"/>
+<status status="PASS" starttime="20210916 14:29:45.918" endtime="20210916 14:29:48.033"/>
 </kw>
 <tag>UI</tag>
-<status status="PASS" starttime="20210913 10:47:09.353" endtime="20210913 10:47:35.212"/>
+<status status="PASS" starttime="20210916 14:29:37.264" endtime="20210916 14:29:48.033"/>
 </test>
-<doc>I want check that text displayed after 15 second</doc>
-<status status="PASS" starttime="20210913 10:47:09.106" endtime="20210913 10:47:35.212"/>
+<doc>Check that buttons not displayed after click to button "Hide"</doc>
+<status status="PASS" starttime="20210916 14:29:37.048" endtime="20210916 14:29:48.033"/>
 </suite>
 <statistics>
 <total>
@@ -61,7 +64,7 @@
 <stat pass="1" fail="0" skip="0">UI</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TestClientDelay">TestClientDelay</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestVisibility">TestVisibility</stat>
 </suite>
 </statistics>
 <errors>
